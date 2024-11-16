@@ -17,7 +17,7 @@ export const Input = ({ placeholder, password, icon, filled, value, onChange }: 
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-      <div className={`has-[:focus]:border-blue-300 flex items-center h-14 rounded-2xl border-2 border-blue-700 ${filled && 'bg-blue-300'}`}>
+      <div className={`has-[:focus]:border-blue-300 flex items-center h-14 rounded-md border-2 border-blue-700 ${filled && 'bg-blue-300'}`}>
         {icon &&
             <FontAwesomeIcon 
                 icon={icon}
