@@ -1,4 +1,7 @@
+import { NavItem } from "@/components/nav/nav-item";
+import { NavLogout } from "@/components/nav/nav-logout";
 import { Logo } from "@/components/ui/logo";
+import { faHouse, faUser } from "@fortawesome/free-solid-svg-icons";
 import { ReactNode } from "react";
 
 type Props = {
@@ -12,11 +15,20 @@ export default function Layout({ children }: Props) {
                 <div className="flex-1 m-6">
                     <Logo size={80}/>
                     <nav className="mt-11">
-                        ...
+                        <NavItem
+                            href="/home"
+                            icon={faHouse}
+                            label="Início" active={undefined}                        
+                        />
+                        <NavItem
+                            href="/profile"
+                            icon={faUser}
+                            label="Meu Perfil" active={undefined}                        
+                        />
                     </nav>
                 </div>
-                <div>
-                    ...
+                <div className="mb-6 flex flex-col gap-4">
+                    <NavLogout/>
                 </div>
             </section>
             <section className="flex-1 max-w-lg">
