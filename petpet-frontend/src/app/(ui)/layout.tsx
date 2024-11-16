@@ -3,7 +3,7 @@ import { NavLogout } from "@/components/nav/nav-logout";
 import { NavMyProfile } from "@/components/nav/nav-myprofile";
 import { Logo } from "@/components/ui/logo";
 import { SearchInput } from "@/components/ui/search-input";
-import { faHouse, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faStar, faUser, faUserGroup, faUserTie } from "@fortawesome/free-solid-svg-icons";
 import { ReactNode } from "react";
 
 type Props = {
@@ -27,6 +27,16 @@ export default function Layout({ children }: Props) {
                             icon={faUser}
                             label="Meu Perfil" active={undefined}                        
                         />
+                        <NavItem
+                            href='/recommendations'
+                            icon={faStar}
+                            label='Recomendações' active={undefined}
+                        />
+                        <NavItem
+                            href='/about'
+                            icon={faUserGroup}
+                            label='Sobre Nós' active={undefined}
+                        />
                     </nav>
                 </div>
                 <div className="mb-6 flex flex-col gap-4">
@@ -37,8 +47,8 @@ export default function Layout({ children }: Props) {
             <section className="flex-1 max-w-lg">
                 {children}
             </section>
-            <aside className="flex lg:flex flex-col gap-6 sticky top-0 h-fit w-96 px-8 py-6 border-l-2 border-yellow-300">
-                <SearchInput/>
+            <aside className="hidden lg:flex flex-col gap-6 sticky top-0 h-fit w-96 px-8 py-6 border-l-2 border-yellow-300">
+                <SearchInput hideOnSearch />
             </aside>
         </main>
     );
