@@ -4,7 +4,6 @@ import { faHouse, faStar, faUser, faUserGroup, faXmark } from "@fortawesome/free
 import { SearchInput } from "../ui/search-input";
 import { NavItem } from "../nav/nav-item";
 import { NavLogout } from "../nav/nav-logout";
-import { useRouter } from "next/navigation";
 
 type Props = {
     closeAction: () => void;

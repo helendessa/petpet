@@ -15,7 +15,7 @@ export const SearchInput = ({ defaultValue, hideOnSearch }: Props) => {
     const pathName = usePathname();
     const [searchInput,  setSearchInput] = useState(defaultValue ?? '');
 
-    console.log("Current path:", pathName); // Adicione esta linha para verificar o caminho atual
+  //  console.log("Current path:", pathName);
 
     const handleSearchEnter = () => {
         if(searchInput) {
