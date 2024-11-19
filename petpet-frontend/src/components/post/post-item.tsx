@@ -1,16 +1,24 @@
 "use client"
 
 import { Post } from "@/types/post";
+import { getFormatRelativeTime } from "@/utils/format-relative";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 import { faPaw, faRetweet } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { useState } from "react";
 
 type Props = {
     post: Post;
 }
 
 export const PostItem = ({ post }: Props) => {
+    const [liked, setLiked] = useState(post.liked);
+
+    const handleLikeButton = () => {
+        setLiked(!liked);
+    };
+
     return (
         <div className="flex gap-2 p-6 border-b-2 border-yellow-300">
             <div>
@@ -24,12 +32,12 @@ export const PostItem = ({ post }: Props) => {
             </div>
             <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-x-3">
-                    <div className="font-bold text-lg">
-                        <Link href={`/${post.user.name}`}>{post.user.name}</Link>
+                    <div className="font-bold text-md">
+                        <Link href={`/${post.user.slug}`}>{post.user.name}</Link>
                     </div>
-                    <div className="text-xs text-blue-500">@{post.user.slug}</div>
+                    <div className="text-xs text-blue-500">@{post.user.slug} - {getFormatRelativeTime(post.dataPost)}</div>
                 </div>
-                <div className="py-4 text-lg">{post.body}</div>
+                <div className="py-4 text-md">{post.body}</div>
                 {post.image &&
                     <div className="w-full">
                         <img
@@ -55,7 +63,7 @@ export const PostItem = ({ post }: Props) => {
                         </div>
                     </div>
                     <div className="flex-1">
-                        <div className="inline-flex items-center gap-2 cursor-pointer">
+                        <div onClick = {handleLikeButton} className={`inline-flex items-center gap-2 cursor-pointer ${liked && 'text-red-500'}`}>
                             <FontAwesomeIcon icon={faPaw} className="size-5"/>
                             <div className="text-sm">{post.likeCount}</div>
                         </div>
