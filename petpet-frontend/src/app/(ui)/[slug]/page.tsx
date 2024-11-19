@@ -1,6 +1,9 @@
+import { ProfileFeed } from "@/components/profile/profile-feed";
 import { Button } from "@/components/ui/button";
 import { GeneralHeader } from "@/components/ui/general-header";
 import { user } from "@/data/user";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 export default function Page () {
@@ -38,9 +41,21 @@ export default function Page () {
                 <div className="px-6 mt-4">
                     <div className="text-xl font-bold">{user.name}</div>
                     <div className="text-blue-500">@{user.slug}</div>
-                    <div className="py-5 text-lg text-blue-600">{user.bio}</div>
+                    <div className="py-5 text-md text-blue-600">{user.bio}</div>
+                    {user.link &&
+                        <div className="flex gap-2 items-center">
+                            <FontAwesomeIcon icon={faLink} className="size-4"/>
+                            <Link className="py-2 hover:underline" target="_blank" href={user.link}>{user.link}</Link>
+                        </div>
+                    }
+                     
+                    <div className="my-5 flex gap-6 text-md text-blue-700">
+                        <div> <span className="font-bold text-blue-700">24</span> Seguindo </div>
+                        <div> <span className="font-bold text-blue-700">24</span> Seguidores </div>
+                    </div>
                 </div>
             </section>
+            <ProfileFeed/>
         </div>
     );
 }
