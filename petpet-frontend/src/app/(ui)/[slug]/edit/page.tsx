@@ -2,6 +2,7 @@ import { ProfileFeed } from "@/components/profile/profile-feed";
 import { Button } from "@/components/ui/button";
 import { GeneralHeader } from "@/components/ui/general-header";
 import { Input } from "@/components/ui/input";
+import { TextArea } from "@/components/ui/text-area";
 import { user } from "@/data/user";
 import { faCamera, faLink, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -50,6 +51,11 @@ export default function Page () {
                 </label>
                 <label>
                     <p className="text-lg text-blue-700 mb-2 font-bold">Bio</p>
+                    <TextArea
+                        placeholder="Digite sua bio"
+                        rows={4}
+                        value={user.bio}
+                    />
                 </label>
                 <label>
                     <p className="text-lg text-blue-700 mb-2 font-bold">Link</p>
