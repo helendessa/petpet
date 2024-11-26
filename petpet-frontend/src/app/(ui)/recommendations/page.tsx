@@ -1,6 +1,28 @@
+"use client"
+
 import { GeneralHeader } from "@/components/ui/general-header";
 
 export default function Page() {
+    const handleShare = (title: string, text: string, url: string) => {
+        if (navigator.share) {
+            navigator.share({
+                title: title,
+                text: text,
+                url: url,
+            })
+            .then(() => console.log('Successful share'))
+            .catch((error) => console.log('Error sharing', error));
+        } else {
+            // Fallback: Copy to clipboard
+            const shareData = `${title}\n${text}\n${url}`;
+            navigator.clipboard.writeText(shareData)
+                .then(() => {
+                    alert('Informações copiadas para a área de transferência. Você pode colar e compartilhar manualmente.');
+                })
+                .catch((error) => console.log('Error copying to clipboard', error));
+        }
+    };
+
     return (
         <div>
             <GeneralHeader backHref="/">
@@ -26,10 +48,20 @@ export default function Page() {
                             width="100%"
                             height="300"
                             style={{ border: 0 }}
-                            allowFullScreen=""
+                            allowFullScreen
                             loading="lazy"
                         ></iframe>
                     </div>
+                    <button
+                        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+                        onClick={() => handleShare(
+                            'Clínica Tal Tal',
+                            'Clínica Tal Tal, oferece os serviços de consultas, exames, cirurgias, internações e vacinas. Endereço: Rua da Penha, 290 - Penha II, Passos - MG, 37903-070. Telefone: (35) 1234-5678. Cupom para desconto de 10%: PETPET10',
+                            'https://maps.app.goo.gl/yGaoDoLgo9kiuCPS9'
+                        )}
+                    >
+                        Compartilhar
+                    </button>
                 </div>
             </div>
 
@@ -53,10 +85,20 @@ export default function Page() {
                             width="100%"
                             height="300"
                             style={{ border: 0 }}
-                            allowFullScreen=""
+                            allowFullScreen
                             loading="lazy"
                         ></iframe>
                     </div>
+                    <button
+                        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+                        onClick={() => handleShare(
+                            'Clínica Tal Tal',
+                            'Clínica Tal Tal, oferece os serviços de consultas, exames, cirurgias, internações e vacinas. Endereço: Rua da Penha, 290 - Penha II, Passos - MG, 37903-070. Telefone: (35) 1234-5678. Cupom para desconto de 10%: PETPET10',
+                            'https://maps.app.goo.gl/yGaoDoLgo9kiuCPS9'
+                        )}
+                    >
+                        Compartilhar
+                    </button>
                 </div>
             </div>
         </div>
