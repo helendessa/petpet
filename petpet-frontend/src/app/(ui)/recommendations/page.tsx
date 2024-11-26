@@ -50,6 +50,7 @@ export default function Page() {
         }
     };
 
+    {/* Implementação do filtro */}
     const toggleCategory = (category: string) => {
         setSelectedCategories(prevSelectedCategories =>
             prevSelectedCategories.includes(category)

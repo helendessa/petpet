@@ -11,4 +11,5 @@ export type Post = {
     liked: boolean;
     reposted: boolean;
     dataPost: Date;
+    categories: Array<string>;
 }
