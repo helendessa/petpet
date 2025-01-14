@@ -5,9 +5,9 @@ import { post } from "@/data/post";
 
 export default function Page() {
     return (
-        <div>
+        <div className="bg-white">
             <GeneralHeader backHref="/">
-                <div className="font-bold text-lg">Voltar</div>
+                <div className="font-bold text-lg bg-white">Voltar</div>
             </GeneralHeader>
             <div className="border-t-2 border-yellow-300">
                 <PostItem post={post} />

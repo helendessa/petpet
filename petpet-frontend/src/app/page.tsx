@@ -6,7 +6,7 @@ export default function Page() {
   redirect('/home');
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
+    <div className="min-h-screen flex justify-center items-center bg-white">
       <Logo size={200}/>
     </div>
   );

@@ -15,7 +15,7 @@ export default function Page({ searchParams }: Props) {
    if (!searchParams.q) redirect('/')
 
    return (
-      <div>
+      <div className="bg-white">
          <GeneralHeader backHref="/">
             <SearchInput defaultValue={searchParams.q} />
          </GeneralHeader>

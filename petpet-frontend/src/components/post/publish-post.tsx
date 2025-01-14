@@ -34,7 +34,7 @@ export const PublishPost = () => {
     };
 
     return (
-        <div className="flex gap-6 px-6 py-6 border-b-2 border-yellow-300">
+        <div className="flex gap-6 px-6 py-6 border-b-2 border-yellow-300 bg-white">
             <div>
                 <img 
                     src={user.avatar}

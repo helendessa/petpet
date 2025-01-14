@@ -10,7 +10,7 @@ export const HomeHeader = () => {
     const [showMenu, setShowMenu] = useState(false);
 
     return (
-        <header className="flex justify-between p-6 border-b-2 border-yellow-300">
+        <header className="flex justify-between p-6 border-b-2 border-yellow-300 bg-white">
             <div className="lg:hidden">
                 <Logo size={30}/>
             </div>

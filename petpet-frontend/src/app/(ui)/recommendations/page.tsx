@@ -64,7 +64,7 @@ export default function Page() {
         : posts;
 
     return (
-        <div>
+        <div className="bg-white">
             <GeneralHeader backHref="/">
                 <div className="font-bold text-lg">Recomendações</div>
             </GeneralHeader> 

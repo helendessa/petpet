@@ -3,7 +3,7 @@ import { GeneralHeader } from "@/components/ui/general-header";
 export default function Page() {
     
     return (
-        <div>
+        <div className="bg-white">
             <GeneralHeader backHref="/">
                 <div className="font-bold text-lg">Sobre Nós</div>
             </GeneralHeader> 

@@ -23,7 +23,7 @@ export const HomeFeed = () => {
     return (
         <div>
             {/* Interface de seleção de categorias */}
-            <div className="p-6 border-r-2 border-t-2 border-b-2 border-yellow-300">
+            <div className="p-6 border-b-2 border-yellow-300 bg-white">
                 <h2 className="text-xl mb-4">Filtrar por Categoria</h2>
                 <div className="flex flex-wrap gap-2">
                     {["adoção", "ajuda", "perdidos", "social"].map(category => (

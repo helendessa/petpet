@@ -4,7 +4,7 @@ import { PublishPost } from "@/components/post/publish-post";
 
 export default function Page() {
     return (
-        <div>
+        <div className="bg-white">
             <HomeHeader/>
             <PublishPost/>
             <HomeFeed/>

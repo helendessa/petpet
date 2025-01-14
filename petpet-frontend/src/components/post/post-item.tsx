@@ -20,7 +20,7 @@ export const PostItem = ({ post }: Props) => {
     };
 
     return (
-        <div className="flex gap-2 p-6 border-b-2 border-yellow-300">
+        <div className="flex gap-2 p-6 border-b-2 border-yellow-300 bg-white">
             <div>
                 <Link href={`/${post.user.slug}`}>
                     <img

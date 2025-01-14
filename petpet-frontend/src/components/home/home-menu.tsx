@@ -27,7 +27,7 @@ export const HomeMenu = ({ closeAction }: Props) => {
                 <NavItem
                     href="/home"
                     icon={faHouse}
-                    label="Início" active={undefined}                        
+                    label="Início" active={undefined} 
                 />
                 <NavItem
                     href="/profile"
